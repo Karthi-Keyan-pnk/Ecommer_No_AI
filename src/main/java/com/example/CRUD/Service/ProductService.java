@@ -1,7 +1,6 @@
 package com.example.CRUD.Service;
 
 import com.example.CRUD.Module.Product;
-import com.example.CRUD.Repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -29,4 +28,23 @@ public class ProductService {
         // return products.get(id);
     }
 
+    public void updateProduct(Product prod, int id) {
+        for(Product p:products){
+            if(p.getId()==id){
+                p.setPrice(prod.getPrice());
+                p.setName(prod.getName());
+                break;
+            }
+        }
+
+    }
+
+    public void deleteProduct(int id) {
+        for(Product P:products) {
+            if(P.getId()==id){
+                products.remove(P);
+                break;
+            }
+        }
+    }
 }
