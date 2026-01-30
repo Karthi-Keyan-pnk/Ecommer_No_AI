@@ -16,11 +16,12 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
+
     private String Name;
     private double Price;
 
     public Product(String str, double v) {
-        this.Name = str;
-        this.Price = v;
+        Name = str;
+        Price = v;
     }
 }
