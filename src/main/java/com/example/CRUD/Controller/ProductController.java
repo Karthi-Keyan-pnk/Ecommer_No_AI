@@ -35,8 +35,8 @@ public class ProductController {
     }
 
     @GetMapping("/csrf")
-    public CsrfToken getToken(CsrfToken request){
-        return request;
+    public String getToken(CsrfToken request){
+        return "Login Sucess"+request;
     }
 
     @PostMapping("/add")
