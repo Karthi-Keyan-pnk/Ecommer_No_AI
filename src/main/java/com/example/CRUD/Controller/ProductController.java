@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@RequestMapping("/products")
+@RequestMapping("/products")
 public class ProductController {
 
     private ProductService productService;
@@ -35,8 +35,8 @@ public class ProductController {
     }
 
     @GetMapping("/csrf")
-    public String getToken(CsrfToken request){
-        return "Login Sucess"+request;
+    public CsrfToken getToken(CsrfToken request){
+        return request;
     }
 
     @PostMapping("/add")
